@@ -14,7 +14,7 @@ ENV GOPATH $DISTRIBUTION_DIR/Godeps/_workspace:$GOPATH
 
 WORKDIR $DISTRIBUTION_DIR
 COPY . $DISTRIBUTION_DIR
-COPY config-cfdev.yml /etc/docker/registry/config.yml
+COPY /codefresh/develop/config-cfdev.yml /etc/docker/registry/config.yml
 RUN make PREFIX=/go clean binaries
 
 VOLUME ["/var/lib/registry"]
